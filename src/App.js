@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const content = [
   {
     summary: "React is a library for building UIs",
@@ -25,13 +27,19 @@ export default function App() {
 }
 
 function Tabbed({ content }) {
+  const [active, setActive] = useState(0);
+
+  function handleActive(num) {
+    setActive((a) => num);
+  }
+
   return (
     <div>
       <div className="tabs">
-        <Tab num={0} />
-        <Tab num={1} />
-        <Tab num={2} />
-        <Tab num={3} />
+        <Tab num={0} active={active} onClick={handleActive} />
+        <Tab num={1} active={active} onClick={handleActive} />
+        <Tab num={2} active={active} onClick={handleActive} />
+        <Tab num={3} active={active} onClick={handleActive} />
       </div>
 
       <TabContent item={content[0]} />
@@ -39,8 +47,15 @@ function Tabbed({ content }) {
   );
 }
 
-function Tab({ num }) {
-  return <button className="tab">Tab {num + 1}</button>;
+function Tab({ num, onClick, active }) {
+  return (
+    <button
+      className={active === num ? "tab active" : "tab"}
+      onClick={() => onClick(num)}
+    >
+      Tab {num + 1}
+    </button>
+  );
 }
 
 function TabContent({ item }) {
