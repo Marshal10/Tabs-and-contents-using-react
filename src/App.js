@@ -33,10 +33,33 @@ function Tabbed({ content }) {
         <Tab num={2} />
         <Tab num={3} />
       </div>
+
+      <TabContent item={content[0]} />
     </div>
   );
 }
 
 function Tab({ num }) {
   return <button>Tab {num + 1}</button>;
+}
+
+function TabContent({ item }) {
+  return (
+    <div className="tab-content">
+      <h4>{item.summary}</h4>
+      <p>{item.details}</p>
+      <div className="tab-actions">
+        <button>Hide details</button>
+        <div className="hearts-counter">
+          <span>0 ❤️</span>
+          <button>+</button>
+          <button>+++</button>
+        </div>
+        <div className="tab-undo">
+          <button>Undo</button>
+          <button>Undo in 2s</button>
+        </div>
+      </div>
+    </div>
+  );
 }
