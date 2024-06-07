@@ -42,7 +42,11 @@ function Tabbed({ content }) {
         <Tab num={3} active={active} onClick={handleActive} />
       </div>
 
-      <TabContent item={content[0]} />
+      {active <= 2 ? (
+        <TabContent item={content[active]} />
+      ) : (
+        <DifferentContent />
+      )}
     </div>
   );
 }
@@ -75,6 +79,14 @@ function TabContent({ item }) {
         <button>Undo</button>
         <button>Undo in 2s</button>
       </div>
+    </div>
+  );
+}
+
+function DifferentContent() {
+  return (
+    <div className="tab-content">
+      <h4>I'm a DIFFERENT tab, so I reset state 💣💥</h4>
     </div>
   );
 }

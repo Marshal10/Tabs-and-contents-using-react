@@ -6,11 +6,8 @@
 
 body {
   font-family: sans-serif;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 48px 96px;
+  position: relative;
   color: #444;
 }
 
@@ -22,7 +19,7 @@ button {
 }
 
 .app {
-  width: 75%;
+  width: 800px;
   margin: 0 auto;
 }
 
