@@ -3,3 +3,104 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+}
+
+button {
+  color: inherit;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.app {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.tab {
+  background-color: #edf2ff;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 12px;
+  font-weight: bold;
+  color: #364fc7;
+  transition: all 0.3s;
+}
+
+.tab.active {
+  background-color: #364fc7;
+  color: #ffffff;
+}
+
+.tab-content {
+  background-color: #edf2ff;
+  padding: 32px;
+  border-radius: 12px;
+}
+
+.tab-content h4 {
+  color: #364fc7;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.tab-content p {
+  font-size: 18px;
+}
+
+.tab-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0 24px 0;
+}
+
+.tab-actions > button {
+  background: none;
+  text-decoration: underline;
+  color: #4c6ef5;
+  font-size: 14px;
+}
+
+.hearts-counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hearts-counter button {
+  border-radius: 4px;
+  background-color: #f03e3e;
+  padding: 4px 6px;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.tab-undo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab-undo button {
+  background-color: #364fc7;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 4px;
+}

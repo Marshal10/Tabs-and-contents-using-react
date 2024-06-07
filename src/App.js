@@ -18,7 +18,7 @@ const content = [
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Tabbed content={content} />
     </div>
   );
@@ -40,7 +40,7 @@ function Tabbed({ content }) {
 }
 
 function Tab({ num }) {
-  return <button>Tab {num + 1}</button>;
+  return <button className="tab">Tab {num + 1}</button>;
 }
 
 function TabContent({ item }) {
@@ -55,10 +55,10 @@ function TabContent({ item }) {
           <button>+</button>
           <button>+++</button>
         </div>
-        <div className="tab-undo">
-          <button>Undo</button>
-          <button>Undo in 2s</button>
-        </div>
+      </div>
+      <div className="tab-undo">
+        <button>Undo</button>
+        <button>Undo in 2s</button>
       </div>
     </div>
   );
