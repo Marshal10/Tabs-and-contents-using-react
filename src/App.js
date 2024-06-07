@@ -63,15 +63,20 @@ function Tab({ num, onClick, active }) {
 }
 
 function TabContent({ item }) {
+  const [showDetails, setShowDetails] = useState(true);
+  const [likes, setLikes] = useState(0);
+
   return (
     <div className="tab-content">
       <h4>{item.summary}</h4>
-      <p>{item.details}</p>
+      {showDetails && <p>{item.details}</p>}
       <div className="tab-actions">
-        <button>Hide details</button>
+        <button onClick={() => setShowDetails((s) => !s)}>
+          {showDetails ? "Hide" : "Show"} details
+        </button>
         <div className="hearts-counter">
-          <span>0 ❤️</span>
-          <button>+</button>
+          <span>{likes} ❤️</span>
+          <button onClick={() => setLikes((l) => l + 1)}>+</button>
           <button>+++</button>
         </div>
       </div>
