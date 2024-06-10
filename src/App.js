@@ -66,6 +66,12 @@ function TabContent({ item }) {
   const [showDetails, setShowDetails] = useState(true);
   const [likes, setLikes] = useState(0);
 
+  function handleSuperLike() {
+    setLikes((l) => l + 1);
+    setLikes((l) => l + 1);
+    setLikes((l) => l + 1);
+  }
+
   return (
     <div className="tab-content">
       <h4>{item.summary}</h4>
@@ -77,7 +83,7 @@ function TabContent({ item }) {
         <div className="hearts-counter">
           <span>{likes} ❤️</span>
           <button onClick={() => setLikes((l) => l + 1)}>+</button>
-          <button>+++</button>
+          <button onClick={handleSuperLike}>+++</button>
         </div>
       </div>
       <div className="tab-undo">
